@@ -14,7 +14,7 @@ class ElasticDeduplicatorBot(Bot):
         if Elasticsearch is None:
             raise ValueError('Missing elasticsearch module.')
         try:
-            self.elastic_host = getattr(self.parameters, 'elastic_host', '192.168.56.52')
+            self.elastic_host = getattr(self.parameters, 'elastic_host')
             self.elastic_port = getattr(self.parameters, 'elastic_port', '9200')
             self.elastic_index = getattr(self.parameters, 'elastic_index', 'intelmq')
             self.elastic_doctype = getattr(self.parameters, 'elastic_doctype', 'events')
